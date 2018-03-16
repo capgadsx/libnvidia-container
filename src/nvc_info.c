@@ -217,10 +217,13 @@ find_binary_paths(struct error *err, struct nvc_driver_info *info, const char *r
                 for (size_t i = 0; i < size; ++i) {
                         if (info->bins[i] != NULL)
                                 continue;
+                        log_infof("path_join: %s and %s", dir, bins[i]);
                         if (path_join(NULL, tmp, dir, bins[i]) < 0)
                                 continue;
+                        log_infof("path_resolve: %s and %s", root, tmp);
                         if (path_resolve(NULL, path, root, tmp) < 0)
                                 continue;
+                        log_infof("file_exists_at: %s and %s", root, path);
                         if (file_exists_at(NULL, root, path) == true) {
                                 info->bins[i] = xstrdup(err, path);
                                 if (info->bins[i] == NULL)
