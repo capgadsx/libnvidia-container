@@ -25,7 +25,7 @@
 #define LDCONFIG_ALT_PATH         "/sbin/ldconfig.real"
 
 #define LIB_DIR                   "/lib64"
-#define USR_BIN_DIR               "/usr/bin"
+#define USR_BIN_DIR               "/opt/bin"
 #define USR_LIB_DIR               "/usr/lib64"
 #define USR_LIB32_DIR             "/usr/lib32"
 #define USR_LIB32_ALT_DIR         "/usr/lib"
